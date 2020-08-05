@@ -1,0 +1,283 @@
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.blur {
+    -webkit-filter: blur(50px);
+    /* Chrome, Opera */
+    -moz-filter: blur(50px);
+    -ms-filter: blur(50px);
+    filter: blur(50px);
+}
+
+.bgmask {
+    height: 750px;
+    background: url(../images/bodyBg.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-position: center top;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+
+#play {
+    width: 800px;
+    height: 450px;
+    /* background-color: aqua; */
+    /* margin: 150px auto; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 999;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.top {
+    height: 10%;
+    width: 100%;
+    background-color: burlywood;
+    z-index: 999;
+}
+
+.top span {
+    font-size: 15px;
+    line-height: 45px;
+    margin-left: 30px;
+    font-weight: bold;
+    color: rgb(95, 39, 0);
+}
+
+.searchbox {
+    width: 250px;
+    height: 30px;
+    background-color: chartreuse;
+    margin-top: 8px;
+    margin-right: 20px;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.searchbox input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.searchbox span {
+    font-size: 20px;
+    position: absolute;
+    right: 8px;
+    top: -6px;
+    font-weight: 100;
+}
+
+.main {
+    height: 80%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* opacity: 0.3; */
+    display: flex;
+}
+
+.main .songList {
+    flex: 3.5;
+    height: 100%;
+}
+
+.main .songList ul {
+    overflow: scroll;
+    height: 100%;
+    padding: 6px 6px 6px 30px;
+}
+
+.main .songList ul::-webkit-scrollbar {
+    display: none;
+}
+
+.main .songList ul li {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 10px 0 10px;
+    position: relative;
+}
+
+.main .songList ul li:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main .songList ul li span:last-of-type {
+    float: right;
+    margin-top: 12px;
+}
+
+.main .songList ul li span:first-of-type {
+    margin-top: 12px;
+    float: left;
+}
+
+.main .songList ul li i {
+    width: 134px;
+    height: 40px;
+    padding-left: 5px;
+    display: inline-block;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    /*强制一行内显示*/
+    overflow: hidden;
+    /*溢出隐藏*/
+    text-overflow: ellipsis;
+    /*超出部分现实省略号*/
+}
+
+.main .playing {
+    flex: 6;
+    position: relative;
+}
+
+.playing .transform {
+    transform: rotate(-30deg);
+}
+
+#doCircle {
+    animation: doCircle 5s infinite linear;
+}
+
+@keyframes doCircle {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.playing>img {
+    transform-origin: 12px 12px;
+    position: absolute;
+    top: -5px;
+    left: 190px;
+    z-index: 3;
+    transition: all 0.5s;
+}
+
+.songimg {
+    width: 255px;
+    height: 255px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.songimg img:first-of-type {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.songimg img:last-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main .comment {
+    flex: 3;
+}
+
+.comment-list {
+    overflow: scroll;
+    height: 322px;
+}
+
+.comment-list::-webkit-scrollbar {
+    display: none;
+}
+
+.comment h5 {
+    color: rgb(105, 59, 0);
+    font-size: 15px;
+}
+
+.comment dl {
+    font-size: 12px;
+    padding: 15px 10px 0 50px;
+    position: relative;
+}
+
+.comment dl .name {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.comment dt {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+}
+
+.comment dt img {
+    width: 100%;
+    height: 100%;
+}
+
+.bottom {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(223, 193, 153);
+}
+
+.bottom audio {
+    width: 800px;
+    height: 45px;
+    padding: 7px 25px;
+    outline: none;
+    /* text-align: center; */
+}
+
+.video {
+    width: 1519px;
+    height: 750px;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.video video {
+    display: block;
+    width: 850px;
+    height: 460px;
+    margin-top: 150px;
+    margin-left: 340px;
+    outline: none;
+    z-index: 999;
+    position: absolute;
+}
+
+.videomask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
